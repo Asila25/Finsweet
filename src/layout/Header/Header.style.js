@@ -1,4 +1,4 @@
-// Header.style.js
+
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -49,7 +49,8 @@ export const MainLogo = styled.div`
 `;
 
 export const MobileMenuButton = styled.div`
-  display: none;
+  display: none; 
+
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -62,7 +63,8 @@ export const MobileMenuButton = styled.div`
 `;
 
 export const MobileMenu = styled.div`
-  display: flex;
+  display: none; 
+
   align-items: center;
   gap: 44px;
 
@@ -82,6 +84,12 @@ export const MobileMenu = styled.div`
     transition: transform 0.3s ease-in-out;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
+
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  }
+
+  @media (min-width: 993px) {
+    display: none;
   }
 `;
 
